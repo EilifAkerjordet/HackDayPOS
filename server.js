@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 import express from 'express';
+// eslint-disable-next-line
 import bodyParser from 'body-parser';
 // eslint-disable-next-line
 import dotenv from 'dotenv';
@@ -10,11 +12,13 @@ import connectDB from './dbConfig.js'
 import Product from './schemas/Product.js'
 // eslint-disable-next-line
 import Transaction from './schemas/Transaction.js'
+// eslint-disable-next-line
+import path from 'path';
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8083;
 
 connectDB();
 
@@ -27,6 +31,10 @@ app.use(morgan((tokens, req, res) => [
   tokens.res(req, res, 'content-length'), '-',
   tokens['response-time'](req, res), 'ms',
 ].join(' ')));
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.get('/api/products', async (req, res) => {
   const products = await Product.find();
