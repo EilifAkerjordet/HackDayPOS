@@ -52,7 +52,11 @@ const BaseLayout = () => {
                   style={{ textDecoration: 'none', color: 'white' }}
                 >
                   <ListItem button>
-                    <ListItemIcon>{index % 2 === 0 ? <StorefrontIcon /> : <ReceiptIcon />}</ListItemIcon>
+                    <ListItemIcon>
+                      {index % 2 === 0
+                        ? <StorefrontIcon />
+                        : <ReceiptIcon /> }
+                    </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItem>
                 </Link>
@@ -67,7 +71,11 @@ const BaseLayout = () => {
                   style={{ textDecoration: 'none', color: 'white' }}
                 >
                   <ListItem button>
-                    <ListItemIcon>{index % 2 === 0 ? <SupervisorAccountIcon /> : <SettingsIcon />}</ListItemIcon>
+                    <ListItemIcon>
+                      {index % 2 === 0
+                        ? <SupervisorAccountIcon />
+                        : <SettingsIcon />}
+                    </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItem>
                 </Link>

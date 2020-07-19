@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Card, Typography } from '@material-ui/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -15,5 +16,11 @@ const TransactionReport = ({ products, totalProd, transactionDate }) => (
     </Card>
   </Grid>
 );
+
+TransactionReport.propTypes = {
+  products: PropTypes.instanceOf(Array).isRequired,
+  totalProd: PropTypes.number.isRequired,
+  transactionDate: PropTypes.string.isRequired,
+};
 
 export default TransactionReport;

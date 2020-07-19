@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Grid } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
@@ -27,6 +28,11 @@ const ItemInTransaction = ({ name, quantity }) => {
       </Grid>
     </Grid>
   );
+};
+
+ItemInTransaction.propTypes = {
+  name: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default ItemInTransaction;
