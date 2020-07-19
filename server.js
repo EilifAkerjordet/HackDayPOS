@@ -15,7 +15,7 @@ import Transaction from './schemas/Transaction.js'
 // eslint-disable-next-line
 import path from 'path';
 
-dotenv.config();
+//dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8083;
