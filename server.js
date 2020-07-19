@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 // eslint-disable-next-line
 //import dotenv from 'dotenv';
 // eslint-disable-next-line
-import morgan from 'morgan';
+//import morgan from 'morgan';
 // eslint-disable-next-line
 import connectDB from './dbConfig.js'
 // eslint-disable-next-line
@@ -24,13 +24,13 @@ connectDB();
 
 app.use(bodyParser.json());
 
-app.use(morgan((tokens, req, res) => [
-  tokens.method(req, res),
-  tokens.url(req, res),
-  tokens.status(req, res),
-  tokens.res(req, res, 'content-length'), '-',
-  tokens['response-time'](req, res), 'ms',
-].join(' ')));
+//app.use(morgan((tokens, req, res) => [
+//  tokens.method(req, res),
+//  tokens.url(req, res),
+//  tokens.status(req, res),
+//  tokens.res(req, res, 'content-length'), '-',
+//  tokens['response-time'](req, res), 'ms',
+//].join(' ')));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
